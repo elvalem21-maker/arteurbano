@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ArteUrbano – Muestra de Graffitis</title>
+  <style>
+    :root{
+      --bg:#0f0f10;        
+      --panel:#1a1b1e;      
+      --ink:#eaeaea;        
+      --muted:#9a9a9a;      
+      --line:#2a2b2f;       
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--ink);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      line-height:1.5;
+    }
+    
+    header{
+      position:sticky; top:0; z-index:10;
+      background:linear-gradient(180deg, rgba(26,27,30,0.92), rgba(26,27,30,0.82));
+      backdrop-filter:saturate(120%) blur(6px);
+      border-bottom:1px solid var(--line);
+    }
+    .wrap{max-width:1100px; margin:0 auto; padding:clamp(12px,2.5vw,20px);}
+    .brand{
+      display:flex; align-items:center; gap:.75rem;
+      letter-spacing:.08em; text-transform:uppercase; font-weight:700; font-size:clamp(14px,2.5vw,16px);
+    }
+    .brand .mark{
+      width:28px; height:28px; border:2px solid var(--ink); border-radius:6px; display:grid; place-items:center; font-size:.8rem;
+    }
+    
+    .intro{ padding: 28px 0 6px;}
+    h1{
+      margin:.25rem 0 .5rem; font-size:clamp(28px,6vw,48px); line-height:1.1;
+      letter-spacing:.02em;
+    }
+    .subtitle{color:var(--muted); max-width:62ch}
+
+    
+    .filters{display:flex; gap:.5rem; flex-wrap:wrap; margin:14px 0 0}
+    .chip{
+      border:1px solid var(--line); color:var(--ink); background:transparent; padding:.4rem .7rem; border-radius:999px; font-size:.85rem; cursor:default;
+    }
+
+    
+    .gallery{
+      display:grid; gap:14px; margin-top:22px;
+      grid-template-columns:repeat(12,1fr);
+    }
+    .card{ grid-column: span 12; background:var(--panel); border:1px solid var(--line); border-radius:16px; overflow:hidden }
+    @media (min-width:600px){ .card{ grid-column: span 6 } }
+    @media (min-width:900px){ .card{ grid-column: span 4 } }
+
+    .shot{
+      aspect-ratio: 4/3; width:100%; object-fit:cover; filter:grayscale(100%);
+      transition: transform .3s ease, filter .3s ease;
+    }
+    .card:hover .shot{ transform: scale(1.02); filter:grayscale(0%); }
+
+    .meta{ display:flex; justify-content:space-between; align-items:center; gap:8px; padding:10px 12px; border-top:1px solid var(--line); }
+    .meta small{ color:var(--muted) }
+
+    
+    footer{border-top:1px solid var(--line); margin-top:28px}
+    .foot{display:flex; justify-content:space-between; align-items:center; gap:12px; padding:18px 0; color:var(--muted); font-size:.9rem}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <div class="brand"><span class="mark">AU</span> ArteUrbano — Muestra de Graffitis</div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="intro">
+      <h1>Muestra de Graffitis</h1>
+      <p class="subtitle">una muestra digital de arte urbano realizado en las ciudades de Reconquista y Avellaneda.</p>
+      <div class="filters" aria-hidden="true">
+        <span class="chip">Mural</span>
+        <span class="chip">Abstracto</span>
+      </div>
+    </section>
+
+    <section class="gallery" aria-label="Galería de graffitis">
+      <article class="card">
+        <img class="shot" src="2 domingos seguidos de plazita 🏁✅ (1).webp" alt="" />
+        <div class="meta">
+          <span>Mural #01</span>
+          <small>RECONQUISTA</small>
+        </div>
+      </article>
+
+      <article class="card">
+        <img class="shot" src="2 domingos seguidos de plazita 🏁✅.webp" alt="" />
+        <div class="meta">
+          <span>Mural #02</span>
+          <small>RECONQUISTA</small>
+        </div>
+      </article>
+
+      <article class="card">
+        <img class="shot" src="El poder de tu ciudad 💯🏁.webp" alt="" />
+        <div class="meta">
+          <span>Mural #03</span>
+          <small>RECONQUISTA</small>
+        </div>
+      </article>
+
+      <article class="card">
+        <img class="shot" src="Reco city 🔮.webp" alt="" />
+        <div class="meta">
+          <span>Mural #04</span>
+          <small>RECONQUISTA</small>
+        </div>
+      </article>
+
+      <article class="card">
+        <img class="shot" src="Terminando tranqui el 2024 🫂.webp" alt="" />
+        <div class="meta">
+          <span>Mural #05</span>
+          <small>AVELLANEDA</small>
+        </div>
+      </article>
+
+      <article class="card">
+        <img class="shot" src="Túnel parte 1 🏁‼️.webp" alt="" />
+        <div class="meta">
+          <span>Mural #06</span>
+          <small>AVELLANEDA</small>
+        </div>
+      </article>
+    </section>
+
+    <footer>
+      <div class="foot">
+        <span>© ArteUrbano — Muestra estática, sin registro ni contacto.</span>
+        <span><small>Monzon Valentino</small></span>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>
